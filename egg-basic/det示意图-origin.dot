@@ -1,0 +1,30 @@
+digraph {
+    layout = dot;
+    splines = spline;
+    rankdir = LR;
+    ranksep = 0.5;
+    nodesep = 0.3;
+    bgcolor = "transparent";
+    label = "before determinization";
+    
+    pencolor = "lightgray";
+    edge [arrowsize = 0.7; fontname = "Georgia";];
+    node [color = black; fontname = "Georgia";];
+    "i" [label ="start";style=filled,fillcolor=gold,shape=circle, penwidth=2.5];
+    "i" -> "p" [label = "i:α/v";];
+
+    "p" [label = "p";shape = circle;];
+    "q₁" [label = "q₁";shape = circle];
+	"q₂" [label = "q₂";shape = circle;];
+	"p" -> "q₁" [label = "x:y₁/w₁";];
+	"p" -> "q₁" [label = "x:y₂/w₂";];
+    "p" -> "q₂" [label = "x:y₃/w₃";];
+
+	"n1" [color = transparent; style=invis];
+	"q₁" -> "n1" [label = "e₁";];
+	"q₁" -> "n1" [label = "e₂";];
+	"q₁" -> "n1" [label = "e₃";];
+	"n2" [color = transparent; style=invis];
+	"q₂" -> "n2" [label = "e₄";];
+	"q₂" -> "n2" [label = "e₅";];
+}

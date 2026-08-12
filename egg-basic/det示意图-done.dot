@@ -1,0 +1,32 @@
+digraph {
+    layout = dot;
+    splines = spline;
+    rankdir = LR;
+    ranksep = 0.5;
+    nodesep = 0.3;
+    bgcolor = "transparent";
+    label = "after determinization";
+    
+    pencolor = "lightgray";
+    edge [arrowsize = 0.7; fontname = "Georgia";];
+    node [color = black; fontname = "Georgia";];
+    "I" [label ="[(start, ϵ, 1)]";style=filled,fillcolor=gold, penwidth=2.5];
+
+    "I"->"P" [label = "  i:α/v";];
+
+    "P" [label = "[(p, ϵ, 1)]";];
+    "Q₁₂" [label = "
+	[(q₁, (y₁+y₂)/(y₁+y₂+y₃), (w₁+w₂)/(w₁+w₂+w₃)), 
+    (q₂,           y₃/(y₁+y₂+y₃),             w₃/(w₁+w₂+w₃))]
+					";shape = box;style=rounded;];
+	"P" -> "Q₁₂" [label = "x : (y₁+y₂+y₃) / (w₁+w₂+w₃)";];
+	
+
+	"N1" [color = transparent; style=invis];
+	"Q₁₂" -> "N1" [label = "e₁";];
+	"Q₁₂" -> "N1" [label = "e₂";];
+	"Q₁₂" -> "N1" [label = "e₃";];
+	"N2" [color = transparent; style=invis];
+	"Q₁₂" -> "N2" [label = "e₄";];
+	"Q₁₂" -> "N2" [label = "e₅";];
+}
